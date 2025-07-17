@@ -24,7 +24,7 @@ This repository contains a modular Neovim (v0.11.3) configuration focused on pro
 ```
 init.lua
 lua/
-  sshaaf/
+  neovim4j/
     init.lua
     lazy.lua
     core/
@@ -63,7 +63,7 @@ The **Leader key** is set to `<Space>`. It acts as a prefix for custom shortcuts
 - **Gradle Build (if configured):**
   - `<leader>gb` — Run Gradle build
 
-*You can find and customize more keymaps in [`lua/sshaaf/core/keymaps.lua`](lua/sshaaf/core/keymaps.lua).*
+*You can find and customize more keymaps in [`lua/neovim4j/core/keymaps.lua`](lua/neovim4j/core/keymaps.lua).*
 
 ## AI Integration
 
@@ -110,7 +110,7 @@ To authenticate or reset your Copilot credentials:
 - `<Tab>` — Accept Copilot suggestion
 - `<C-e>` — Dismiss Copilot suggestion
 
-You can further customize Copilot and ChatGPT settings in `lua/sshaaf/plugins/ai.lua`.
+You can further customize Copilot and ChatGPT settings in `lua/neovim4j/plugins/ai.lua`.
 
 ## Getting Started
 
@@ -121,7 +121,7 @@ You can further customize Copilot and ChatGPT settings in `lua/sshaaf/plugins/ai
    ```sh
    export OPENAI_API_KEY="your-api-key-here"
    ```
-5. **Customize plugins and keymaps** in the `lua/sshaaf/plugins/` and `lua/sshaaf/core/` folders.
+5. **Customize plugins and keymaps** in the `lua/neovim4j/plugins/` and `lua/neovim4j/core/` folders.
 
 ## Prerequisites
 
@@ -169,9 +169,9 @@ Continue with the steps in the **Getting Started** section after installing thes
 
 ## Customization
 
-- **Keymaps:** See [`lua/sshaaf/core/keymaps.lua`](lua/sshaaf/core/keymaps.lua)
-- **Options:** See [`lua/sshaaf/core/options.lua`](lua/sshaaf/core/options.lua)
-- **Plugins:** See [`lua/sshaaf/plugins/`](lua/sshaaf/plugins/)
+- **Keymaps:** See [`lua/neovim4j/core/keymaps.lua`](lua/neovim4j/core/keymaps.lua)
+- **Options:** See [`lua/neovim4j/core/options.lua`](lua/neovim4j/core/options.lua)
+- **Plugins:** See [`lua/neovim4j/plugins/`](lua/neovim4j/plugins/)
 
 ## License
 

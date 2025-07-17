@@ -1,4 +1,4 @@
--- ~/.config/nvim/lua/sshaaf/plugins/java.lua
+-- ~/.config/nvim/lua/neovim4j/plugins/java.lua
 
 return {
   -------------------------------------------

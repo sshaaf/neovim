@@ -1,2 +1,2 @@
-require("sshaaf")
+require("neovim4j")
 

@@ -2,19 +2,19 @@ return {
   -- Add your plugins here
   
   -- Your other plugins
-  { import = 'sshaaf.plugins.colorscheme' }, -- Example
+  { import = 'neovim4j.plugins.colorscheme' }, -- Example
   
   -- Terminal
-  { import = 'sshaaf.plugins.terminal' },
+  { import = 'neovim4j.plugins.terminal' },
 
   -- Completions for java
-  { import = 'sshaaf.plugins.completions' },
+  { import = 'neovim4j.plugins.completions' },
   
   -- Add AI Plugins
-  { import = 'sshaaf.plugins.ai' },
+  { import = 'neovim4j.plugins.ai' },
   
     -- java plugin setup
-  { import = 'sshaaf.plugins.java' },
+  { import = 'neovim4j.plugins.java' },
   {
     'folke/tokyonight.nvim',
     lazy = false, -- Load this plugin on startup

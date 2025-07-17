@@ -1,4 +1,4 @@
--- ~/.config/nvim/lua/sshaaf/plugins/ai.lua
+-- ~/.config/nvim/lua/neovim4j/plugins/ai.lua
 return {
   -- 1. AI Code Completion: GitHub Copilot
   {
