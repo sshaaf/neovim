@@ -1,3 +1,9 @@
+---
+title: "Quick Reference"
+weight: 4
+bookToc: true
+---
+
 # Java Development Quick Reference
 
 ## Essential Keybindings
@@ -156,4 +162,4 @@
 - Use `:help <topic>` for help
 
 ---
-For detailed guide, see [GETTING_STARTED.md](GETTING_STARTED.md)
+For detailed guide, see [Getting Started]({{< relref "/getting-started" >}})
