@@ -519,10 +519,7 @@ Debug steps:
 | `<Space>dt` | Terminate debug session |
 | `<Space>dr` | Open REPL |
 
+---
 ## What's Next?
 
-In [Lesson 9: Testing](09-testing.md), you'll learn to run and manage JUnit tests in Neovim.
-
----
-
-[← Previous: Code Navigation](07-code-navigation.md) | [Next: Testing →](09-testing.md)
+In [Lesson 9: Testing]({{< relref "/tutorial/09-testing" >}}), you'll learn to run and manage JUnit tests in Neovim.

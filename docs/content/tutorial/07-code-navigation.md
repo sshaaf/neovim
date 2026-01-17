@@ -497,10 +497,7 @@ Pick a method, then:
 5. **Leverage fuzzy finding** - Often faster than tree navigation
 6. **Read hover docs** - Press `K` to understand before jumping
 
+---
 ## What's Next?
 
-In [Lesson 8: Debugging](08-debugging.md), you'll learn to debug Java applications right from Neovim.
-
----
-
-[← Previous: Buffer Navigation](06-buffer-navigation.md) | [Next: Debugging →](08-debugging.md)
+In [Lesson 8: Debugging]({{< relref "/tutorial/08-debugging" >}}), you'll learn to debug Java applications right from Neovim.

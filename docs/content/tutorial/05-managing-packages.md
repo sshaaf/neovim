@@ -426,10 +426,7 @@ Practice:
 4. Use auto-imports
 5. Navigate between files with `gd` and `<Ctrl-o>`
 
+---
 ## What's Next?
 
-In [Lesson 6: Buffer Navigation](06-buffer-navigation.md), you'll learn to work efficiently with multiple files open.
-
----
-
-[← Previous: Creating Classes](04-creating-classes.md) | [Next: Buffer Navigation →](06-buffer-navigation.md)
+In [Lesson 6: Buffer Navigation]({{< relref "/tutorial/06-buffer-navigation" >}}), you'll learn to work efficiently with multiple files open.

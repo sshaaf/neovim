@@ -359,10 +359,7 @@ gi                            " Go to implementation
 3. Switch buffers in that split with `<Space>bb`
 4. Or create splits for most-used files
 
+---
 ## What's Next?
 
-In [Lesson 7: Code Navigation](07-code-navigation.md), you'll learn to navigate large codebases like a pro.
-
----
-
-[← Previous: Managing Packages](05-managing-packages.md) | [Next: Code Navigation →](07-code-navigation.md)
+In [Lesson 7: Code Navigation]({{< relref "/tutorial/07-code-navigation" >}}), you'll learn to navigate large codebases like a pro.

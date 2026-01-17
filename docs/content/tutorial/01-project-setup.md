@@ -208,10 +208,7 @@ maven-demo/
 3. Use the file explorer to create `Main.java` in the correct package
 4. Verify jdtls is running with `:LspInfo`
 
+---
 ## What's Next?
 
-In [Lesson 2: Hello World](02-hello-world.md), you'll write your first Java program and run it.
-
----
-
-[← Back to Tutorial Home](index.md) | [Next: Hello World →](02-hello-world.md)
+In [Lesson 2: Hello World]({{< relref "/tutorial/02-hello-world" >}}), you'll write your first Java program and run it.

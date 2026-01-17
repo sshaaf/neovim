@@ -249,10 +249,9 @@ Use only Vim motions to:
 3. Save it
 4. Run it
 
+---
 ## What's Next?
 
-In [Lesson 3: Code Completion](03-code-completion.md), you'll learn to use intelligent auto-completion to code faster.
+In [Lesson 3: Code Completion]({{< relref "/tutorial/03-code-completion" >}}), you'll learn to use intelligent auto-completion to code faster.
 
----
 
-[← Previous: Project Setup](01-project-setup.md) | [Next: Code Completion →](03-code-completion.md)

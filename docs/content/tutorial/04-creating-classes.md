@@ -306,10 +306,9 @@ Better than find-and-replace:
 4. **Keep imports clean** - Regularly organize imports
 5. **Read error messages** - Code actions often suggest the fix
 
+---
 ## What's Next?
 
-In [Lesson 5: Managing Packages](05-managing-packages.md), you'll learn to organize code with Java packages.
+In [Lesson 5: Managing Packages]({{< relref "/tutorial/05-managing-packages" >}}), you'll learn to organize code with Java packages.
 
----
 
-[← Previous: Code Completion](03-code-completion.md) | [Next: Managing Packages →](05-managing-packages.md)

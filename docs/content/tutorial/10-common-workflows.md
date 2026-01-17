@@ -572,8 +572,6 @@ You now know how to:
 4. **Explore plugins** - Add tools as needed
 5. **Join community** - GitHub discussions, Reddit r/neovim
 
-Happy coding with Neovim4j! 🚀
 
 ---
-
-[← Previous: Testing](09-testing.md) | [Back to Tutorial Home](index.md)
+Happy coding with Neovim4j!

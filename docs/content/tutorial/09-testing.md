@@ -587,10 +587,7 @@ Take complex method:
 | `<Space>db` | Set breakpoint (for debug) |
 | `<Space>dc` | Debug test |
 
+---
 ## What's Next?
 
-In [Lesson 10: Common Workflows](10-common-workflows.md), you'll put everything together with real-world development scenarios.
-
----
-
-[← Previous: Debugging](08-debugging.md) | [Next: Common Workflows →](10-common-workflows.md)
+In [Lesson 10: Common Workflows]({{< relref "/tutorial/10-common-workflows" >}}), you'll put everything together with real-world development scenarios.

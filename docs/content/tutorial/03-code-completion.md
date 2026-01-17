@@ -298,10 +298,9 @@ Make sure you're accepting completions from the LSP source (they'll have specifi
 4. **Use snippets** - They save time for boilerplate code
 5. **Explore APIs** - Type `.` and browse what's available
 
+---
 ## What's Next?
 
-In [Lesson 4: Creating Classes](04-creating-classes.md), you'll learn multiple ways to create and manage Java classes.
+In [Lesson 4: Creating Classes]({{< relref "/tutorial/04-creating-classes" >}}), you'll learn multiple ways to create and manage Java classes.
 
----
 
-[← Previous: Hello World](02-hello-world.md) | [Next: Creating Classes →](04-creating-classes.md)
