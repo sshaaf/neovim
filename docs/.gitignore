@@ -1,0 +1,17 @@
+# Hugo build output
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Temporary files
+.DS_Store
+*~
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+
+# Node modules (if using npm for preprocessing)
+node_modules/

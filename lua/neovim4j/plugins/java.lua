@@ -1,92 +1,114 @@
 -- ~/.config/nvim/lua/neovim4j/plugins/java.lua
+-- Simple jdtls configuration without nvim-java wrapper
 
 return {
   -------------------------------------------
-  -- Core Java Setup (LSP, DAP, Testing)
+  -- Mason for installing jdtls
   -------------------------------------------
   {
-    'nvim-java/nvim-java',
-    dependencies = {
-      'nvim-java/lua-async-await',
-      'nvim-java/nvim-java-core',
-      'nvim-java/nvim-java-test',
-      'nvim-java/nvim-java-dap',
-      'MunifTanjim/nui.nvim',
-      'neovim/nvim-lspconfig',
-      'mfussenegger/nvim-dap',
-    },
+    'williamboman/mason.nvim',
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- 1. Setup nvim-java itself
-      require('java').setup()
-
-      -- 2. Define your on_attach function with all your keymaps
-      local on_attach = function(client, bufnr)
-        -- Keymaps for LSP actions
-        local opts = { buffer = bufnr, noremap = true, silent = true }
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-        vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
-        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-        vim.keymap.set('n', '<leader>th', '<Cmd>JavaTypeHierarchy<CR>', opts)
-        vim.keymap.set('n', '<leader>ch', '<Cmd>JavaCallHierarchy<CR>', opts)
-
-        -- Keymaps for testing
-        vim.keymap.set('n', '<leader>jt', function() require('java.test').run_class_tests() end, opts)
-        vim.keymap.set('n', '<leader>jT', function() require('java.test').run_file_tests() end, opts)
-        vim.keymap.set('n', '<leader>jm', function() require('java.test').run_method_test() end, opts)
-
-        -- Keymaps for debugging
-        vim.keymap.set('n', '<leader>db', function() require('dap').toggle_breakpoint() end, opts)
-        vim.keymap.set('n', '<leader>dc', function() require('dap').continue() end, opts)
-        vim.keymap.set('n', '<leader>dn', function() require('dap').step_over() end, opts)
-        vim.keymap.set('n', '<leader>di', function() require('dap').step_into() end, opts)
-      end
-
-      -- 3. Pass this on_attach function to the lspconfig setup
-      require('lspconfig').jdtls.setup({
-        on_attach = on_attach,
+      require('mason').setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗",
+          },
+        },
       })
     end,
   },
 
   -------------------------------------------
-  -- LSP/Tool Installer
+  -- Mason LSP Config
   -------------------------------------------
   {
-    'williamboman/mason.nvim',
-    opts = {}, -- Omit opts to use the default configuration
-  },
-  {
     'williamboman/mason-lspconfig.nvim',
-    dependencies = { 'williamboman/mason.nvim', 'neovim/nvim-lspconfig' },
+    dependencies = { 'williamboman/mason.nvim' },
+    lazy = false,
+    priority = 999,
     opts = {
-      -- Ensure jdtls is automatically installed
       ensure_installed = { 'jdtls' },
     },
   },
 
   -------------------------------------------
-  -- Autocompletion Engine
+  -- jdtls configuration
   -------------------------------------------
   {
-    'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path' },
+    'mfussenegger/nvim-jdtls',
+    ft = { 'java' },
+    dependencies = {
+      'mfussenegger/nvim-dap',
+    },
     config = function()
-      local cmp = require('cmp')
-      cmp.setup({
-        sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
-          { name = 'buffer' },
-          { name = 'path' },
-        }),
-        mapping = cmp.mapping.preset.insert({
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
-          ['<C-e>'] = cmp.mapping.abort(),
-        }),
-      })
+      local jdtls = require('jdtls')
+
+      -- Find jdtls installation path
+      local jdtls_path = vim.fn.stdpath('data') .. '/mason/packages/jdtls'
+      local config_path = jdtls_path .. '/config_mac'
+      local plugins_path = jdtls_path .. '/plugins/'
+      local launcher_jar = vim.fn.glob(plugins_path .. 'org.eclipse.equinox.launcher_*.jar')
+
+      -- Data directory for workspace
+      local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+      local workspace_dir = vim.fn.stdpath('cache') .. '/jdtls-workspace/' .. project_name
+
+      local config = {
+        cmd = {
+          'java',
+          '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+          '-Dosgi.bundles.defaultStartLevel=4',
+          '-Declipse.product=org.eclipse.jdt.ls.core.product',
+          '-Dlog.protocol=true',
+          '-Dlog.level=ALL',
+          '-Xmx1g',
+          '--add-modules=ALL-SYSTEM',
+          '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+          '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+          '-jar', launcher_jar,
+          '-configuration', config_path,
+          '-data', workspace_dir,
+        },
+        root_dir = jdtls.setup.find_root({'.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle'}),
+        settings = {
+          java = {
+            signatureHelp = { enabled = true },
+            contentProvider = { preferred = 'fernflower' },
+            completion = {
+              favoriteStaticMembers = {
+                "org.junit.Assert.*",
+                "org.junit.jupiter.api.Assertions.*",
+                "org.mockito.Mockito.*"
+              },
+              filteredTypes = {
+                "com.sun.*",
+                "io.micrometer.shaded.*",
+              },
+            },
+            sources = {
+              organizeImports = {
+                starThreshold = 9999,
+                staticStarThreshold = 9999,
+              },
+            },
+            codeGeneration = {
+              toString = {
+                template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
+              },
+              useBlocks = true,
+            },
+          }
+        },
+        init_options = {
+          bundles = {}
+        },
+      }
+
+      jdtls.start_or_attach(config)
     end,
   },
 }

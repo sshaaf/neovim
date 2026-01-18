@@ -1,0 +1,80 @@
+baseURL = "https://shaaf.dev/neovim4j/"
+languageCode = "en-us"
+title = "Neovim4j - Java Development in Neovim"
+theme = "hugo-book"
+
+# Enable Git info
+enableGitInfo = true
+
+# Syntax highlighting
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    lineNumbersInTable = false
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Getting Started"
+    url = "/getting-started/"
+    weight = 2
+  [[menu.main]]
+    name = "Tutorial"
+    url = "/tutorial/"
+    weight = 3
+  [[menu.main]]
+    name = "Quick Reference"
+    url = "/quick-reference/"
+    weight = 4
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://shaaf.dev/neovim4j"
+    weight = 5
+
+# Params for hugo-book theme
+[params]
+  # Set source repository location
+  BookRepo = "https://shaaf.dev/neovim4j"
+
+  # Enable search
+  BookSearch = true
+
+  # Display source file edit link
+  BookEditPath = "edit/main/docs"
+
+  # Path to book logo
+  # BookLogo = "/logo.png"
+
+  # Set TOC depth
+  BookToC = 3
+
+  # Enable section navigation
+  BookSection = "*"
+
+  # Theme variant: light, dark, auto
+  BookTheme = "light"
+
+  # Comments
+  BookComments = false
+
+  # Multi-language
+  BookLanguages = false
+
+  # Default branch for edit links
+  BookBranch = "main"
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"

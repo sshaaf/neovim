@@ -33,8 +33,8 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("v", "<C-c>", [["+y]])
 
 -- Keymap to run a Gradle build in a new terminal tab
-vim.keymap.set('n', '<leader>gb', '<Cmd>ToggleTerm gradle build<CR>', { desc = "Gradle build" })
-vim.keymap.set('n', '<leader>gc', '<Cmd>ToggleTerm gradle compileJava<CR>', { desc = "Gradle compile" })
+-- vim.keymap.set('n', '<leader>gb', '<Cmd>ToggleTerm gradle build<CR>', { desc = "Gradle build" })
+-- vim.keymap.set('n', '<leader>gc', '<Cmd>ToggleTerm gradle compileJava<CR>', { desc = "Gradle compile" })
 
 --Lazygit
 vim.keymap.set('n', '<leader>gg', '<Cmd>ToggleTerm lazygit<CR>', { desc = "Open Lazygit" })
