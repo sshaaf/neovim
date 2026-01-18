@@ -23,7 +23,7 @@ By the end of this lesson, you'll be able to:
 DAP (Debug Adapter Protocol) is like LSP but for debugging. Neovim4j uses:
 - `nvim-dap` - Debug adapter client
 - `nvim-dap-ui` - Beautiful debug UI
-- `java-debug` - Java debug adapter (via nvim-java)
+- `nvim-jdtls` - Java debug adapter integration for jdtls
 
 ## Debug UI Overview
 

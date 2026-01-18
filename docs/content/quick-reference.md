@@ -26,8 +26,6 @@ bookToc: true
 | `gt` | Go to type definition |
 | `gr` or `gR` | Find references |
 | `K` | Show documentation |
-| `<Space>th` | Type hierarchy |
-| `<Space>ch` | Call hierarchy |
 
 ### Code Editing
 | Key | Action |
@@ -49,11 +47,11 @@ bookToc: true
 | `<Space>rs` | Restart LSP |
 
 ### Testing
-| Key | Action |
-|-----|--------|
-| `<Space>jt` | Run class tests |
-| `<Space>jT` | Run file tests |
-| `<Space>jm` | Run method test |
+| Command | Action |
+|---------|--------|
+| `:!mvn test` | Run all tests (Maven) |
+| `:!mvn test -Dtest=ClassName` | Run specific test class |
+| `:!gradle test` | Run all tests (Gradle) |
 
 ### Debugging
 | Key | Action |
@@ -74,17 +72,21 @@ bookToc: true
 ### Terminal
 | Key | Action |
 |-----|--------|
-| `<C-\>` | Toggle terminal |
+| `<C-7>` | Toggle terminal |
 | `<C-\><C-n>` | Exit terminal mode |
 | `i` | Enter terminal mode |
+| `<Space>gb` | Run Gradle build |
+| `<Space>gc` | Run Gradle compile |
+| `<Space>gg` | Open Lazygit |
 
-### AI (if configured)
+### AI (CodeCompanion with Ollama)
 | Key | Action |
 |-----|--------|
-| `<Tab>` | Accept Copilot suggestion |
-| `<Space>ac` | Open ChatGPT |
-| `<Space>ae` | Edit with AI (visual) |
+| `<Space>ac` | Open AI chat |
+| `<Space>ae` | Edit selection with AI (visual) |
 | `<Space>ax` | Explain code (visual) |
+| `<Space>aa` | Show AI actions menu |
+| `<Space>at` | Toggle AI chat window |
 
 ## Vim Essentials
 

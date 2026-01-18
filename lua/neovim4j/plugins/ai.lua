@@ -1,47 +1,83 @@
 -- ~/.config/nvim/lua/neovim4j/plugins/ai.lua
 return {
-  -- 1. AI Code Completion: GitHub Copilot
+  -------------------------------------------
+  -- CodeCompanion.nvim - Self-Hosted AI Assistant
+  -------------------------------------------
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
+    'olimorris/codecompanion.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+    },
     config = function()
-      require("copilot").setup({
-        suggestion = {
-          auto_trigger = true,
-          keymap = {
-            accept = "<Tab>",
-            dismiss = "<C-e>",
+      require('codecompanion').setup({
+        -- Configure adapters (LLM providers)
+        adapters = {
+          ollama = function()
+            return require('codecompanion.adapters').extend('ollama', {
+              env = {
+                url = 'http://localhost:11434',
+              },
+              schema = {
+                model = {
+                  default = 'deepseek-coder:6.7b',
+                  -- Alternative models you can use:
+                  -- 'qwen2.5-coder:7b'
+                  -- 'codellama:13b'
+                  -- 'starcoder2:15b'
+                },
+              },
+            })
+          end,
+        },
+
+        -- Set default strategies to use Ollama
+        strategies = {
+          chat = {
+            adapter = 'ollama',
+          },
+          inline = {
+            adapter = 'ollama',
+          },
+          agent = {
+            adapter = 'ollama',
+          },
+        },
+
+        -- Display settings
+        display = {
+          chat = {
+            window = {
+              layout = 'vertical', -- vertical or horizontal
+              width = 0.4,
+            },
+          },
+          inline = {
+            diff = {
+              enabled = true,
+              close_diff_at = 'both', -- both, start, end
+            },
           },
         },
       })
-    end,
-  },
 
-  -- 2. AI Chat and Commands: ChatGPT.nvim (OpenAI)
-  -- dont forget to: export OPENAI_API_KEY="your-api-key-here"
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-    config = function()
-      require("chatgpt").setup({
-        -- Optional: Set the default model to GPT-4
-        model = "gpt-4.1-2025-04-14",
-        -- Optional: Set the API key environment variable
-        api_key_var = "OPENAI_API_KEY",
-      })
-
-      -- Add some useful keymaps
+      -- Keybindings (matching previous ChatGPT keybindings where possible)
       local keymap = vim.keymap
-      keymap.set("n", "<leader>ac", "<cmd>ChatGPT<CR>", { desc = "ChatGPT: Chat" })
-      keymap.set("v", "<leader>ae", "<cmd>ChatGPTEditWithInstructions<CR>", { desc = "ChatGPT: Edit with instructions" })
-      keymap.set("n", "<leader>ag", "<cmd>ChatGPTCompleteCode<CR>", { desc = "ChatGPT: Complete code" })
-      keymap.set("v", "<leader>ax", "<cmd>ChatGPTExplain<CR>", { desc = "ChatGPT: Explain code" })
+
+      -- Chat interface
+      keymap.set('n', '<leader>ac', '<cmd>CodeCompanionChat<CR>', { desc = 'AI: Open chat' })
+      keymap.set('v', '<leader>ac', '<cmd>CodeCompanionChat<CR>', { desc = 'AI: Chat with selection' })
+
+      -- Inline editing
+      keymap.set('v', '<leader>ae', '<cmd>CodeCompanionInline<CR>', { desc = 'AI: Edit selection' })
+
+      -- Explain code
+      keymap.set('v', '<leader>ax', '<cmd>CodeCompanion /explain<CR>', { desc = 'AI: Explain code' })
+
+      -- Additional useful commands
+      keymap.set('n', '<leader>aa', '<cmd>CodeCompanionActions<CR>', { desc = 'AI: Show actions' })
+      keymap.set('v', '<leader>aa', '<cmd>CodeCompanionActions<CR>', { desc = 'AI: Show actions' })
+      keymap.set('n', '<leader>at', '<cmd>CodeCompanionChat Toggle<CR>', { desc = 'AI: Toggle chat' })
     end,
   },
 }

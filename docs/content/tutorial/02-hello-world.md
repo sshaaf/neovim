@@ -135,9 +135,9 @@ java -cp src/main/java com.example.Main
 
 You can run commands without leaving Neovim:
 
-1. Press `<Space>tf` to open a floating terminal
+1. Press `<C-7>` (Ctrl+7) to toggle the terminal
 2. Run your Maven/Gradle commands
-3. Press `Ctrl-\` then `Ctrl-n` to exit terminal mode
+3. Press `<C-7>` again to toggle back, or `Ctrl-\` then `Ctrl-n` to exit terminal mode
 4. Type `exit` to close the terminal
 
 ## Editing Practice

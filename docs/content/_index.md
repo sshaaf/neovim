@@ -7,7 +7,7 @@ type: docs
 {{< button relref="/getting-started" >}}Get Started{{< /button >}}
 {{< button href="https://github.com/sshaaf/neovim4j" >}}View on GitHub{{< /button >}}
 
-Neovim4j is a specialized Neovim configuration engineered exclusively for Java developers. If you prioritize speed and simplicity with a superior terminal experience. If you are tired of bloat and tools you don't need, Neovim4j is the answer.  You get the latest LSP, built-in debugging, and AI assistance pre-configured out of the box. No distractions and no unnecessary eye candy—it simply works.
+Neovim4j is a specialized Neovim configuration engineered exclusively for Java developers. If you prioritize speed and simplicity with a superior terminal experience. If you are tired of bloat and tools you don't need, Neovim4j is the answer.  You get the latest LSP, built-in debugging, and self-hosted AI assistance (via Ollama) pre-configured out of the box. No distractions and no unnecessary eye candy—it simply works.
 
 > A streamlined Neovim configuration optimized specifically for Java development.
 
@@ -28,12 +28,13 @@ See [Installation Guide]({{< relref "/install" >}}) for detailed instructions.
 ## What's Included
 
 **Core Features:**
-- Java LSP (jdtls) via nvim-java
+- Java LSP (jdtls) via nvim-jdtls
 - Debug Adapter Protocol (DAP) for debugging
 - nvim-cmp for intelligent completion
 - Treesitter for syntax highlighting
 - Telescope for fuzzy finding
 - nvim-tree for file exploration
+- CodeCompanion.nvim for self-hosted AI assistance (Ollama)
 
 **Language Support:**
 - Java (primary focus)

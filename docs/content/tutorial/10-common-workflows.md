@@ -496,12 +496,13 @@ vim.opt.shiftwidth = 4
 
 ### Tip 3: Terminal Integration
 
-Use toggleterm for better terminal:
+Use toggleterm for integrated terminal:
 
 ```
-<Space>tf  - Floating terminal
-<Space>th  - Horizontal terminal
-<Space>tv  - Vertical terminal
+<C-7>     - Toggle terminal (Ctrl+7)
+<Space>gb - Run Gradle build
+<Space>gc - Run Gradle compile
+<Space>gg - Open Lazygit
 ```
 
 ### Tip 4: Session Management

@@ -68,40 +68,35 @@ assertArrayEquals(expectedArray, actualArray);
 
 ## Running Tests in Neovim
 
-### Run Test at Cursor
+### Run Tests via Build Tool
 
-Place cursor inside a test method and press:
+The most reliable way to run tests is using your build tool directly:
 
-```
-<Space>jt
-```
-
-(Java Test)
-
-Runs the single test method under cursor.
-
-### Run All Tests in Class
-
-With cursor anywhere in test class:
-
-```
-<Space>jT
-```
-
-(Java Test Class - capital T)
-
-Runs all test methods in the file.
-
-### Run All Tests in Project
-
+**Maven:**
 ```vim
 :!mvn test
 ```
 
-Or for Gradle:
+**Gradle:**
 ```vim
 :!gradle test
 ```
+
+**Run specific test class:**
+```vim
+:!mvn test -Dtest=CalculatorTest
+```
+
+**Run specific test method:**
+```vim
+:!mvn test -Dtest=CalculatorTest#testAdd
+```
+
+### IDE-Style Test Running (Optional)
+
+For IDE-style test running (run test under cursor), you can configure additional keybindings with nvim-jdtls. Check the jdtls documentation for available test commands.
+
+Alternatively, use a terminal split to keep tests running continuously (see Continuous Testing Workflow section below).
 
 ## Test Results
 
@@ -208,7 +203,7 @@ public void testCalculateDiscount() {
 }
 ```
 
-Press `<Space>jt` - Test fails (class doesn't exist).
+Run `:!mvn test -Dtest=PriceCalculatorTest#testCalculateDiscount` - Test fails (class doesn't exist).
 
 **Step 2: Create minimal implementation**
 
@@ -220,7 +215,7 @@ public class PriceCalculator {
 }
 ```
 
-Press `<Space>jt` - Test still fails (returns 0).
+Run test again - Test still fails (returns 0).
 
 **Step 3: Make it pass**
 
@@ -232,7 +227,7 @@ public class PriceCalculator {
 }
 ```
 
-Press `<Space>jt` - Test passes! ✓
+Run test - Test passes! ✓
 
 **Step 4: Add more tests**
 
@@ -250,31 +245,25 @@ public void testCalculateDiscountWithHundredPercent() {
 }
 ```
 
-Press `<Space>jT` - Run all tests.
+Run `:!mvn test -Dtest=PriceCalculatorTest` - Run all tests in the class.
 
 ## Debugging Tests
 
 ### Debug Single Test
 
-1. Set breakpoint in test method
-2. Cursor on test method
-3. Press `<Space>jt` to run in debug mode
-
-Or:
-
-1. Cursor on test method
-2. `<Space>db` - Set breakpoint
-3. `<Space>dc` - Start debugging
+1. Set breakpoint in test method: `<Space>db`
+2. Use jdtls test commands or run with Maven/Gradle in debug mode
+3. Step through code with debug controls (see Lesson 8: Debugging)
 
 ### Debug Failing Test
 
 When test fails:
 
-1. Set breakpoint at assertion
-2. Run test in debug mode
-3. Step through code
-4. Inspect variables
-5. Find the issue
+1. Set breakpoint at assertion: `<Space>db`
+2. Run test with your build tool
+3. Use debug controls to step through
+4. Inspect variables in the Variables pane
+5. Find and fix the issue
 
 ## Test Organization
 
@@ -578,14 +567,16 @@ Take complex method:
 6. **Use setUp/tearDown** - Don't repeat initialization
 7. **Test edge cases** - Zero, null, negative, boundary values
 
-## Keybindings Summary
+## Testing Commands Summary
 
-| Key | Action |
-|-----|--------|
-| `<Space>jt` | Run test at cursor |
-| `<Space>jT` | Run test class |
-| `<Space>db` | Set breakpoint (for debug) |
-| `<Space>dc` | Debug test |
+| Command | Action |
+|---------|--------|
+| `:!mvn test` | Run all tests |
+| `:!mvn test -Dtest=ClassName` | Run specific test class |
+| `:!mvn test -Dtest=ClassName#methodName` | Run specific test method |
+| `:!gradle test` | Run all tests (Gradle) |
+| `<Space>db` | Set breakpoint for debugging |
+| `<Space>dc` | Start debugging session |
 
 ---
 ## What's Next?

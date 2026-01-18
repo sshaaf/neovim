@@ -19,7 +19,7 @@ By the end of this tutorial, you'll be able to:
 - Navigate large codebases efficiently
 - Debug Java applications
 - Run and manage JUnit tests
-- Use AI-powered coding assistants
+- Use self-hosted AI coding assistants (via Ollama)
 
 ## Prerequisites
 
