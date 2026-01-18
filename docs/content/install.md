@@ -22,7 +22,7 @@ Before starting, ensure you have the following installed:
 
 1. Clone this configuration to your Neovim config directory:
 ```bash
-git clone <your-repo-url> ~/.config/nvim
+git clone https://github.com/sshaaf/neovim4j.git ~/.config/nvim
 ```
 
 2. Open Neovim for the first time:

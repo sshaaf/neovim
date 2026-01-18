@@ -15,7 +15,7 @@ Neovim4j is a specialized Neovim configuration engineered exclusively for Java d
 
 ```bash
 # Clone as your Neovim configuration
-git clone https://github.com/yourusername/neovim4j.git ~/.config/nvim
+git clone https://github.com/sshaaf/neovim4j.git ~/.config/nvim
 
 # Start Neovim
 nvim
