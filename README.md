@@ -19,6 +19,7 @@ Feel free to use this as a reference or starting point for your own Neovim setup
 - **AI Integration:** Ollama, Gemini support for AI-assisted coding
 - **Smart Completion:** nvim-cmp with LSP, buffer, path, and snippet sources
 - **UI Enhancements:** Bufferline, lualine, colorschemes, indent guides
+- **Theme Switcher:** Telescope-based theme picker with live preview and persistence (8 themes: tokyonight, ayu_dark, catppuccin, gruvbox, onedark, nord, nightfox, kanagawa)
 - **File Explorer:** Nvim-tree with custom icons and keymaps
 - **Fuzzy Finder:** Telescope for fast file and text search
 - **Terminal Integration:** ToggleTerm for embedded terminals

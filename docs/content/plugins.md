@@ -154,10 +154,44 @@ This page lists all the plugins that power this Neovim configuration, including 
 
 ## UI & Appearance
 
-### tokyonight.nvim
+### Color Schemes
+
+This configuration includes 8 color schemes with a Telescope-based theme switcher (`<Space>ct`) that provides live preview and persistence.
+
+#### tokyonight.nvim
 - **Version**: 5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd
-- **Description**: Clean, dark Neovim color scheme
+- **Description**: Clean, dark Neovim color scheme (default)
 - **Repository**: [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+
+#### neovim-ayu
+- **Description**: Modern dark color scheme with warm tones
+- **Repository**: [Shatur/neovim-ayu](https://github.com/Shatur/neovim-ayu)
+
+#### catppuccin
+- **Description**: Soothing pastel theme with multiple variants
+- **Repository**: [catppuccin/nvim](https://github.com/catppuccin/nvim)
+
+#### gruvbox.nvim
+- **Description**: Retro groove color scheme with warm palette
+- **Repository**: [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim)
+
+#### onedark.nvim
+- **Description**: Atom's iconic One Dark theme for Neovim
+- **Repository**: [navarasu/onedark.nvim](https://github.com/navarasu/onedark.nvim)
+
+#### nord.nvim
+- **Description**: Arctic, north-bluish color scheme
+- **Repository**: [shaunsingh/nord.nvim](https://github.com/shaunsingh/nord.nvim)
+
+#### nightfox.nvim
+- **Description**: Highly customizable theme with multiple variants
+- **Repository**: [EdenEast/nightfox.nvim](https://github.com/EdenEast/nightfox.nvim)
+
+#### kanagawa.nvim
+- **Description**: Dark color scheme inspired by famous painting
+- **Repository**: [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
+
+### Status Line & Bufferline
 
 ### lualine.nvim
 - **Version**: 47f91c416daef12db467145e16bed5bbfe00add8

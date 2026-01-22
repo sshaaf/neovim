@@ -57,5 +57,35 @@ return {
     keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
     keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+
+    -- Theme switcher with persistence
+    keymap.set("n", "<leader>ct", function()
+      local builtin = require("telescope.builtin")
+      local themes = require("telescope.themes")
+
+      builtin.colorscheme(themes.get_dropdown({
+        enable_preview = true,
+        attach_mappings = function(prompt_bufnr)
+          actions.select_default:replace(function()
+            local selection = action_state.get_selected_entry()
+            actions.close(prompt_bufnr)
+
+            -- Apply the colorscheme
+            vim.cmd("colorscheme " .. selection.value)
+
+            -- Save preference to file
+            local preference_file = vim.fn.stdpath("data") .. "/theme_preference.txt"
+            local file = io.open(preference_file, "w")
+            if file then
+              file:write(selection.value)
+              file:close()
+              vim.g.theme_preference = selection.value
+              print("Theme saved: " .. selection.value)
+            end
+          end)
+          return true
+        end,
+      }))
+    end, { desc = "Change colorscheme/theme" })
   end,
 }

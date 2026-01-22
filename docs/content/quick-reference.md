@@ -19,6 +19,11 @@ bookToc: true
 | `<Space>fs` | Search in files (grep) |
 | `<Space>fb` | Switch buffers |
 
+### UI Customization
+| Key | Action |
+|-----|--------|
+| `<Space>ct` | Change colorscheme/theme (live preview) |
+
 ### Code Navigation
 | Key | Action |
 |-----|--------|
