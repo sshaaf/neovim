@@ -2,7 +2,7 @@
 
 This repository contains my personal Neovim (v0.11.3) configuration optimized for **Java and Rust development**. It leverages [lazy.nvim](https://github.com/folke/lazy.nvim) for plugin management and includes language-specific LSP, debugging, testing, AI integration, and modern productivity tools.
 
-Feel free to use this as a reference or starting point for your own Neovim setup!
+Originally started as a Java-focused config, it has evolved into a polyglot development environment. Feel free to use this as a reference or starting point for your own Neovim setup!
 
 > **Inspiration:**
 > This configuration was inspired by [Melkeydev's Neovim repo](https://github.com/Melkeydev/neovim), the YouTube talk ["How I use Neovim in 2024"](https://youtu.be/bVKA4Im2yTc?feature=shared), and [LazyVim's language extras](https://www.lazyvim.org/extras).
@@ -19,18 +19,25 @@ Feel free to use this as a reference or starting point for your own Neovim setup
 
 ### Language Support
 - **Java:** Full jdtls LSP integration with debugging (DAP) and testing support
-- **Rust:** rustaceanvim for advanced LSP features, crates.nvim for Cargo.toml management, codelldb debugger, and neotest integration
+- **Rust:** rustaceanvim with rust-analyzer LSP, crates.nvim for Cargo.toml management, codelldb debugger, and neotest integration
 
 ### Core Features
-- **AI Integration:** Ollama, Gemini support for AI-assisted coding
+- **AI Integration:** CodeCompanion with Ollama and Gemini support for AI-assisted coding
 - **Smart Completion:** nvim-cmp with LSP, buffer, path, and snippet sources
 - **UI Enhancements:** Bufferline, lualine, colorschemes, indent guides
-- **Theme Switcher:** Telescope-based theme picker with live preview and persistence (8 themes: tokyonight, ayu_dark, catppuccin, gruvbox, onedark, nord, nightfox, kanagawa)
+- **Theme Switcher:** Telescope-based theme picker with live preview and persistence (8 lazy-loaded themes: tokyonight, ayu_dark, catppuccin, gruvbox, onedark, nord, nightfox, kanagawa)
 - **File Explorer:** Nvim-tree with custom icons and keymaps
 - **Fuzzy Finder:** Telescope for fast file and text search
 - **Terminal Integration:** ToggleTerm for embedded terminals with Lazygit support
-- **Syntax Highlighting:** Treesitter-based syntax highlighting (with LSP semantic tokens disabled for colorful highlighting)
-- **Plugin Management:** Uses lazy.nvim for fast, lazy-loaded plugins
+- **Syntax Highlighting:** Treesitter-based syntax highlighting with LSP semantic tokens disabled for colorful highlighting
+- **Plugin Management:** lazy.nvim for fast startup with lazy-loaded plugins
+
+## Requirements
+
+- Neovim 0.11.3 or later
+- A terminal with true color (24-bit) support (iTerm2, Alacritty, Kitty, WezTerm, etc.) for proper theme display
+- `rust-analyzer` for Rust development
+- `jdtls` for Java development (auto-installed via nvim-java)
 
 ## Quick Start
 
@@ -48,6 +55,14 @@ Feel free to use this as a reference or starting point for your own Neovim setup
    - `<Space>ca` - Code actions
 
 See [Quick Reference](docs/content/quick-reference.md) for complete keybinding list.
+
+## Documentation
+
+Full documentation is available in the [docs](https://shaaf.dev/neovim/) directory, including:
+- Installation guide
+- Step-by-step tutorials for Java and Rust
+- Plugin reference
+- Complete keybinding list
 
 ## Structure
 
