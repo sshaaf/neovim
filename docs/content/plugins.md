@@ -207,6 +207,18 @@ This configuration includes 8 color schemes with a Telescope-based theme switche
 - **Version**: 3aab2147e74890957785941f0c1ad87d0a44c15a
 - **Description**: Displays available keybindings in popup
 - **Repository**: [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
+- **Keybindings**: `<Space>?` or `<Space><Space>` to show popup
+
+### cheatsheet.nvim
+- **Description**: Searchable cheatsheet for keybindings and plugin commands via Telescope
+- **Repository**: [sudormrfbin/cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
+- **Keybindings**: `<Space>cs` to open cheatsheet
+
+### Custom Keymaps Sidebar
+- **Location**: `lua/neovim4j/utils/keymaps-sidebar.lua`
+- **Description**: Custom utility that displays a persistent sidebar on the right side showing all keybindings organized by category
+- **Keybindings**: `<Space>ck` to toggle sidebar, `q` to close
+- **Features**: Shows leader keymaps and other keybindings with syntax highlighting
 
 ## File Management
 

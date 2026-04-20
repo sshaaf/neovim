@@ -36,5 +36,10 @@ return {
 		vim.keymap.set("n", "<leader><leader>", function()
 			require("which-key").show({ global = false })
 		end, { desc = "Show all keybindings" })
+
+		-- Add keymap to toggle the persistent keymaps sidebar
+		vim.keymap.set("n", "<leader>ck", function()
+			require("neovim4j.utils.keymaps-sidebar").toggle_sidebar()
+		end, { desc = "Toggle keymaps sidebar" })
 	end,
 }

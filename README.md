@@ -12,8 +12,11 @@ Originally started as a Java-focused config, it has evolved into a polyglot deve
 ## Features
 
 ### Quick Reference
-**Don't know the keybindings?** Just press `<Space>` and wait! The which-key popup shows all available commands organized by category.
-- Press `<Space>?` or `<Space><Space>` anytime to see all keybindings
+**Don't know the keybindings?** Multiple ways to access help:
+- Press `<Space>` and wait! The which-key popup shows all available commands organized by category
+- Press `<Space>?` or `<Space><Space>` for which-key popup
+- Press `<Space>ck` to toggle a persistent keymaps sidebar on the right
+- Press `<Space>cs` for a searchable cheatsheet via Telescope
 - Organized groups: Find, File Explorer, Split Windows, Tabs, Git, Code actions, and more
 - See [Quick Reference](docs/content/quick-reference.md) for complete list
 
@@ -44,6 +47,8 @@ Originally started as a Java-focused config, it has evolved into a polyglot deve
 1. **Open a file:** `nvim yourfile.rs` or `nvim YourClass.java`
 2. **Press `<Space>`** and wait to see all available keybindings
 3. **Essential keybindings:**
+   - `<Space>ck` - Toggle keymaps sidebar (persistent)
+   - `<Space>?` - Show all keybindings (popup)
    - `<Space>ne` - Toggle file explorer
    - `<Space>ff` - Find files
    - `<Space>fs` - Search in files
@@ -72,7 +77,9 @@ The configuration is organized in a modular structure:
 - `lua/neovim4j/plugins/rust.lua` - Rust-specific tooling
 - `lua/neovim4j/plugins/lsp/lspconfig.lua` - General LSP configuration
 - `lua/neovim4j/plugins/which-key.lua` - Keybinding reference popup
+- `lua/neovim4j/plugins/cheatsheet.lua` - Searchable cheatsheet
 - `lua/neovim4j/plugins/` - Other plugin configurations
+- `lua/neovim4j/utils/` - Custom utilities (keymaps sidebar, etc.)
 
 > **Note:** The `neovim4j` directory name is historical from when this was Java-focused. It now supports multiple languages.
 

@@ -8,13 +8,17 @@ bookToc: true
 
 ## Quick Access to Keybindings
 
-**Don't remember a keybinding?** Just press `<Space>` and wait a moment - which-key will show all available commands organized by category!
+**Don't remember a keybinding?** Multiple ways to get help:
 
 | Key | Action |
 |-----|--------|
-| `<Space>` (wait) | Show all keybindings automatically |
-| `<Space>?` | Show all keybindings |
-| `<Space><Space>` | Show all keybindings |
+| `<Space>` (wait) | Show all keybindings automatically (which-key popup) |
+| `<Space>?` | Show all keybindings (which-key popup) |
+| `<Space><Space>` | Show all keybindings (which-key popup) |
+| `<Space>ck` | Toggle keymaps sidebar (persistent right panel) |
+| `<Space>cs` | Open cheatsheet (searchable via Telescope) |
+
+**Tip:** The keymaps sidebar (`<Space>ck`) provides a persistent view of all your shortcuts on the right side of the screen. Press `q` to close it.
 
 ## Essential Keybindings
 
@@ -234,11 +238,14 @@ When editing Cargo.toml files:
 
 ## Tips
 - **Leader key is `<Space>`** - Press it and wait to see all available commands!
+- **Multiple ways to see keybindings:**
+  - `<Space>ck` - Persistent sidebar on the right (close with `q`)
+  - `<Space>?` - Which-key popup
+  - `<Space>cs` - Searchable cheatsheet
 - Use `:Mason` to manage LSP servers
 - Use `:Lazy` to manage plugins
 - Use `:checkhealth` to diagnose issues
 - Use `:help <topic>` for help
-- Press `<Space>?` or `<Space><Space>` anytime to see keybinding reference
 - Lazygit (`<Space>gg`) provides a visual interface for all git operations
 
 ---

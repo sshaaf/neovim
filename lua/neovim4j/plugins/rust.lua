@@ -30,7 +30,10 @@ return {
                 enable = true,
               },
             },
-            checkOnSave = {
+            -- Enable check on save
+            checkOnSave = true,
+            -- Configure check command separately
+            check = {
               command = 'clippy',
               extraArgs = { '--no-deps' },
             },
